@@ -1,7 +1,7 @@
-# A minimal Docker image with Node and Puppeteer
+# A minimal Docker image with Node, Puppeteer and Pa11y-CI
 #
 # Initially based upon:
-# https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
+# https://github.com/buildkite/docker-puppeteer
 
 FROM node:14.16.0-buster-slim@sha256:ffc15488e56d99dbc9b90d496aaf47901c6a940c077bc542f675ae351e769a12
 RUN  apt-get update \
@@ -20,5 +20,5 @@ RUN  apt-get update \
      && chmod +x /usr/sbin/wait-for-it.sh
 
 # Install Puppeteer under /node_modules so it's available system-wide
-ADD package.json package-lock.json /
-RUN npm install
+ADD package.json yarn.lock /
+RUN yarn install
