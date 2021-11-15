@@ -22,4 +22,9 @@ RUN  apt-get update \
 # Install Puppeteer under /node_modules so it's available system-wide
 ADD package.json yarn.lock /
 RUN yarn install
-ENTRYPOINT ["yarn", "pa11y-ci"]
+RUN yarn global add \
+        pa11y/pa11y-ci#6b2d4f54efe445ad551472acc1877fe7542ac085 \
+        depcheck \
+        --unsafe-perm \
+    && yarn cache clean
+
