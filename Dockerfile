@@ -3,7 +3,7 @@
 # Initially based upon:
 # https://github.com/buildkite/docker-puppeteer
 
-FROM node:14.16.0-buster-slim@sha256:ffc15488e56d99dbc9b90d496aaf47901c6a940c077bc542f675ae351e769a12
+FROM --platform=linux/amd64 node:14.16.0-buster-slim@sha256:ffc15488e56d99dbc9b90d496aaf47901c6a940c077bc542f675ae351e769a12
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates procps libxss1 \
      && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -22,9 +22,4 @@ RUN  apt-get update \
 # Install Puppeteer under /node_modules so it's available system-wide
 ADD package.json yarn.lock /
 RUN yarn install
-RUN yarn global add \
-        pa11y/pa11y-ci#e7b7c17b4ec5fa5d3b52b539f15b520af470c0b2 \
-        depcheck \
-        --unsafe-perm \
-    && yarn cache clean
 
