@@ -23,7 +23,7 @@ RUN  apt-get update \
 ADD package.json yarn.lock /
 RUN yarn install
 RUN yarn global add \
-        pa11y/pa11y-ci#6b2d4f54efe445ad551472acc1877fe7542ac085 \
+        pa11y/pa11y-ci#e7b7c17b4ec5fa5d3b52b539f15b520af470c0b2 \
         depcheck \
         --unsafe-perm \
     && yarn cache clean
