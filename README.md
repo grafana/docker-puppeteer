@@ -21,3 +21,10 @@ See the [example directory](example) for a complete Docker Compose example, show
 2. docker push hugohaggmark/docker-puppeteer:latest hugohaggmark/docker-puppeteer:<VERSION>
 3. docker push hugohaggmark/docker-puppeteer:<VERSION>
 4. There is no step 4.
+
+Image is now published to GCR - Google Artifact Registry
+
+Before, You will need gcloud CLI installed locally, and authenticated to your Grafana Google account.
+
+1. Request "timed access"
+2. Authenticate to Docker with gcloud: `gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://us-docker.pkg.dev`

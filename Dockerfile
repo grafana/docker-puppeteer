@@ -3,7 +3,8 @@
 # Initially based upon:
 # https://github.com/buildkite/docker-puppeteer
 
-FROM --platform=linux/amd64 node:14.16.0-buster-slim@sha256:ffc15488e56d99dbc9b90d496aaf47901c6a940c077bc542f675ae351e769a12
+FROM --platform=linux/amd64 node:20.9.0-buster-slim@sha256:ec8072f0dc866129eddca290422a3fa77770f17190c2e79d4e65af264eee15b4
+
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates procps libxss1 \
      && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
