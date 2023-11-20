@@ -17,9 +17,9 @@ See the [example directory](example) for a complete Docker Compose example, show
 
 ## Releasing
 
-1. docker build . --tag hugohaggmark/docker-puppeteer:latest --tag hugohaggmark/docker-puppeteer:<VERSION>
-2. docker push hugohaggmark/docker-puppeteer:latest hugohaggmark/docker-puppeteer:<VERSION>
-3. docker push hugohaggmark/docker-puppeteer:<VERSION>
+1. docker build . --tag grafana/docker-puppeteer:latest --tag grafana/docker-puppeteer:<VERSION>
+2. docker push grafana/docker-puppeteer:latest grafana/docker-puppeteer:<VERSION>
+3. docker push grafana/docker-puppeteer:<VERSION>
 4. There is no step 4.
 
 Image is now published to GCR - Google Artifact Registry
